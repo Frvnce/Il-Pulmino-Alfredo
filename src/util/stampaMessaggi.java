@@ -28,18 +28,102 @@ public class stampaMessaggi {
         return listaGiocatori;
     }
 
-    public void sceltaPulmino(int numeroGiocatori, ArrayList<String> listaGiocatori){
+    public ArrayList<Integer> sceltaPulmino(int numeroGiocatori, ArrayList<String> listaGiocatori){
         System.out.println("\n\n"+gioco+"E' il momento di selezionare i pulmini da guidare!\n" +
                 "Di seguito troverai la lista di pulman che puoi selezionare. \nIniziera' a scegliere" +
                 "il primo giocatore.");
-
+        ArrayList<Integer> listaPersonaggi = new ArrayList<>();
         for (int i = 0; i < numeroGiocatori; i++) {
             System.out.println(gioco+"Giocatore "+(i+1)+", scegli il tuo pulmino: \n" +
-                    "[1] Pulmino \"ALFREDO\"\n \tCaratteristiche: [VITA]: 120| [CORAZZA]: 50| [VELOCITA]: 70| [PESO]: 100| [FORZA]: 15.\n" +
-                    "[2] Navetta \"OSSAS\"\n \tCaratteristiche: [VITA]: 160| [CORAZZA]: 40| [VELOCITA]: 65| [PESO]: 150| [FORZA]: 20.\n" +
-                    "[3] Filo-Bus \"DRAKE\"\n \tCaratteristiche: [VITA]: 200| [CORAZZA]: 80| [VELOCITA]: 45| [PESO]: 200| [FORZA]: 25.\n" +
-                    "[4] Pullman \"PONTOS\"\n \tCaratteristiche: [VITA]: 100| [CORAZZA]: 20| [VELOCITA]: 90| [PESO]: 80| [FORZA]: 5.\n");
-
+                    "[1] Pulmino \"ALFREDO\"\n \tCaratteristiche: [VELOCITA]: 6 | [FORTUNA] 1.\n " +
+                    "[2] Navetta \"OSSAS\"\n \tCaratteristiche: [VELOCITA]: 4 | [FORTUNA] 2.\n " +
+                    "[3] Filo-Bus \"DRAKE\"\n \tCaratteristiche: [VELOCITA]: 3 | [FORTUNA] 3.\n " +
+                    "[4] Pullman \"PONTOS\"\n \tCaratteristiche: [VELOCITA]: 2 | [FORTUNA] 4.\n " +
+                    "Scegli: ");
+            listaPersonaggi.add(sc.nextInt());
+            System.out.println(gioco+" Ottima scelta!\n");
         }
+        return listaPersonaggi;
     }
+
+    public static String calcoloSpazio(int distanza){
+        String spazio="";
+        for (int i = 0; i < distanza; i++) {
+            spazio = spazio +" ";
+        }
+        return spazio;
+    }
+
+    public static void alfredo(String spazio){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+                spazio +"            \\______________    \n" +
+                spazio +"            | [][][][][][]|_\\ \n" +
+                spazio +"            |     ALFREDO   |) \n" +
+                spazio +"         ...=--OO-------OO--=  \n");
+    }
+    public static void ossas(String spazio){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+                spazio +"            ___/\\_____/\\___    \n" +
+                spazio +"           | [][][][][][]|_\\ \n" +
+                spazio +"           |     OSSAS     |) \n" +
+                spazio +"        ...=--OO-------OO--=  \n");
+    }
+    public static void drake(String spazio){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+                spazio +"    __________________________    \n" +
+                spazio +"   | [][][][][]| |[][][][][]|_\\ \n" +
+                spazio +"   |     DRAKE |  |  PULLMAN  |) \n" +
+                spazio +"...=--OO------------------OO--=  \n");
+    }
+    public static void pontos(String spazio){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+                spazio +"            _______________    \n" +
+                spazio +"           | [][][][][][]|_\\ \n" +
+                spazio +"           |     PONTOS     |) \n" +
+                spazio +"        ...=--OO-------OO--=  \n");
+    }
+
+    public void stampaInizioGioco() throws InterruptedException {
+        System.out.println("[GIOCO] Preparatevi a giocare!\n" +
+                "Ora l'unica cosa che dovrete fare sarà godervi la gara! BUONA FORTUNA!");
+
+        Thread.sleep(1000);
+        System.out.println("  ████████ \n" +
+                " ███░░░░███\n" +
+                "░░░    ░███\n" +
+                "   ██████░ \n" +
+                "  ░░░░░░███\n" +
+                " ███   ░███\n" +
+                "░░████████ \n" +
+                " ░░░░░░░░  \n\n");
+        Thread.sleep(1000);
+        System.out.println("  ████████ \n" +
+                " ███░░░░███\n" +
+                "░░░    ░███\n" +
+                "   ███████ \n" +
+                "  ███░░░░  \n" +
+                " ███      █\n" +
+                "░██████████\n" +
+                "░░░░░░░░░░ \n\n");
+        Thread.sleep(1000);
+        System.out.println(" ████ \n" +
+                "░░███ \n" +
+                " ░███ \n" +
+                " ░███ \n" +
+                " ░███ \n" +
+                " ░███ \n" +
+                " █████\n" +
+                "░░░░░ \n\n");
+        Thread.sleep(1000);
+        System.out.println(" █████   █████ █████   █████████   ███\n" +
+                "░░███   ░░███ ░░███   ███░░░░░███ ░███\n" +
+                " ░███    ░███  ░███  ░███    ░███ ░███\n" +
+                " ░███    ░███  ░███  ░███████████ ░███\n" +
+                " ░░███   ███   ░███  ░███░░░░░███ ░███\n" +
+                "  ░░░█████░    ░███  ░███    ░███ ░░░ \n" +
+                "    ░░███      █████ █████   █████ ███\n" +
+                "     ░░░      ░░░░░ ░░░░░   ░░░░░ ░░░ \n\n\n\n");
+        Thread.sleep(1000);
+    }
+
 }
