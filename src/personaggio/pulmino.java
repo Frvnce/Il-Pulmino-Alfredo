@@ -17,6 +17,8 @@ public class pulmino {
         this.distanza = distanza;
     }
 
+
+
     public int getDistanza() {
         return distanza;
     }

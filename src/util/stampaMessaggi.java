@@ -54,29 +54,33 @@ public class stampaMessaggi {
         return spazio;
     }
 
-    public static void alfredo(String spazio){
-        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+    public static void alfredo(String spazio,int distanza,String giocatore){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n" +
+                "Giocatore: "+giocatore+" | Distanza: "+distanza+"\n" +
                 spazio +"            \\______________    \n" +
                 spazio +"            | [][][][][][]|_\\ \n" +
                 spazio +"            |     ALFREDO   |) \n" +
                 spazio +"         ...=--OO-------OO--=  \n");
     }
-    public static void ossas(String spazio){
-        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+    public static void ossas(String spazio,int distanza,String giocatore){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n" +
+                "Giocatore: "+giocatore+" | Distanza: "+distanza+"\n" +
                 spazio +"            ___/\\_____/\\___    \n" +
                 spazio +"           | [][][][][][]|_\\ \n" +
                 spazio +"           |     OSSAS     |) \n" +
                 spazio +"        ...=--OO-------OO--=  \n");
     }
-    public static void drake(String spazio){
-        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+    public static void drake(String spazio,int distanza,String giocatore){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n" +
+                "Giocatore: "+giocatore+" | Distanza: "+distanza+"\n" +
                 spazio +"    __________________________    \n" +
                 spazio +"   | [][][][][]| |[][][][][]|_\\ \n" +
                 spazio +"   |     DRAKE |  |  PULLMAN  |) \n" +
                 spazio +"...=--OO------------------OO--=  \n");
     }
-    public static void pontos(String spazio){
-        System.out.println("__________________________________________________________________________________________________________________________________|\n\n" +
+    public static void pontos(String spazio,int distanza,String giocatore){
+        System.out.println("__________________________________________________________________________________________________________________________________|\n" +
+                "Giocatore: "+giocatore+" | Distanza: "+distanza+"\n" +
                 spazio +"            _______________    \n" +
                 spazio +"           | [][][][][][]|_\\ \n" +
                 spazio +"           |     PONTOS     |) \n" +

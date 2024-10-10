@@ -44,21 +44,42 @@ public class Main {
         do {
             //TODO Stampare a video la gara, ogni volta bisogna calcolare la distanza per ogni singolo giocatore, quindi probabilmente ci deve essere un
             //TODO DoWhile che comanda, all'interno un for che cicla per il numero di giocatori, fa il calcolo della distanza di ognuno e poi stampa la distanza totale.
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            for (pulmino value : listaGiocatori) {
 
+                int distanzaDaPercorrere = value.calcoloDistanza();
+                int distanzaTotale = value.getDistanza() + distanzaDaPercorrere;
+                value.setDistanza(distanzaTotale);
 
-            //TODO Da togliere perchè sennò dava errore.
-            double test = Math.random()*150;
-            if(test>=100) condizione = false;
-            System.out.println(test);
+                switch (value.getPersonaggio()) {
+                    case "ALFREDO":
+                        stampaMessaggi.alfredo(stampaMessaggi.calcoloSpazio(distanzaTotale),distanzaTotale,value.getNome());
+                        break;
+                    case "OSSAS":
+                        stampaMessaggi.ossas(stampaMessaggi.calcoloSpazio(distanzaTotale),distanzaTotale,value.getNome());
+                        break;
+                    case "DRAKE":
+                        stampaMessaggi.drake(stampaMessaggi.calcoloSpazio(distanzaTotale),distanzaTotale,value.getNome());
+                        break;
+                    case "PONTOS":
+                        stampaMessaggi.pontos(stampaMessaggi.calcoloSpazio(distanzaTotale),distanzaTotale,value.getNome());
+                        break;
+                }
+
+            }
 
             //TODO La condizione deve essere che almeno 1 bus deve arrivare a distanza=100. FATTO
             for (personaggio.pulmino pulmino : listaGiocatori) {
                 if (pulmino.getDistanza() >= 100) {
                     condizione = false;
-                    vincitore = pulmino.getNome() + " CON: " + pulmino.getPersonaggio() + "!";
+                    vincitore = pulmino.getNome() + " Con: " + pulmino.getPersonaggio() + "!";
                     break;
                 }
             }
+
+            Thread.sleep(900);
         }while(condizione);
 
         System.out.println(stampaMessaggi.gioco + "Il vincitore è: " + vincitore);
