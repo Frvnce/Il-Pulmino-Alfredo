@@ -23,16 +23,16 @@ public class Main {
         for (int i = 0; i < numeroGiocatori; i++) {
             switch(listaPersonaggi.get(i)){
                 case 1:
-                    listaGiocatori.add(new pulmino("ALFREDO",listaNomiGiocatori.get(i),6,1,0));
+                    listaGiocatori.add(new pulmino("ALFREDO",listaNomiGiocatori.get(i),6,2,0));
                     break;
                 case 2:
-                    listaGiocatori.add(new pulmino("OSSAS",listaNomiGiocatori.get(i),4,2,0));
+                    listaGiocatori.add(new pulmino("OSSAS",listaNomiGiocatori.get(i),4,3,0));
                     break;
                 case 3:
-                    listaGiocatori.add(new pulmino("DRAKE",listaNomiGiocatori.get(i),3,3,0));
+                    listaGiocatori.add(new pulmino("DRAKE",listaNomiGiocatori.get(i),3,4,0));
                     break;
                 case 4:
-                    listaGiocatori.add(new pulmino("PONTOS",listaNomiGiocatori.get(i),2,4,0));
+                    listaGiocatori.add(new pulmino("PONTOS",listaNomiGiocatori.get(i),2,6,0));
                     break;
             }
         }
